@@ -1,0 +1,15 @@
+{
+  "name": "Hackathon2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.12.0",
+    "request": "^2.79.0",
+    "xml2js": "^0.4.17"
+  }
+}
