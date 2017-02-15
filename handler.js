@@ -1,5 +1,4 @@
 var request = require('request');
-var parseString = require('xml2js').parseString;
 var AWS = require('aws-sdk');
 
 AWS.config.update({
