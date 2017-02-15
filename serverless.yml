@@ -85,7 +85,7 @@ functions:
     handler: handler.queryShuttleTime
     events:
       - http:
-           path: hello/search/{name}
+           path: hello/search
            method: get
            cors: true
 

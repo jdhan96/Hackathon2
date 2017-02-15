@@ -163,7 +163,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-nodejs/dev/1487051070352-2017-02-14T05:44:30.352Z/aws-nodejs.zip"
+          "S3Key": "serverless/aws-nodejs/dev/1487142266361-2017-02-15T07:04:26.361Z/aws-nodejs.zip"
         },
         "FunctionName": "aws-nodejs-dev-hello",
         "Handler": "handler.hello",
@@ -182,14 +182,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "HelloLambdaVersionjqAFw1KD5d12TYwczuX6DZzF8WWJ7zzFiyzWY62ucpg": {
+    "HelloLambdaVersion8bZ5pJn72yvIDOyRXmCjh5T44tiMzm9k1JrMPtQTw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HelloLambdaFunction"
         },
-        "CodeSha256": "jqAFw1KD5d12TYwczuX6DZzF8WWJ7zzFiyzWY62ucpg="
+        "CodeSha256": "8+bZ5pJn72yvIDOyRXmCjh5T44tiMzm9k+1JrMPtQTw="
       }
     },
     "SearchTimeLambdaFunction": {
@@ -199,7 +199,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-nodejs/dev/1487051070352-2017-02-14T05:44:30.352Z/aws-nodejs.zip"
+          "S3Key": "serverless/aws-nodejs/dev/1487142266361-2017-02-15T07:04:26.361Z/aws-nodejs.zip"
         },
         "FunctionName": "aws-nodejs-dev-searchTime",
         "Handler": "handler.queryShuttleTime",
@@ -218,14 +218,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "SearchTimeLambdaVersionjqAFw1KD5d12TYwczuX6DZzF8WWJ7zzFiyzWY62ucpg": {
+    "SearchTimeLambdaVersion8bZ5pJn72yvIDOyRXmCjh5T44tiMzm9k1JrMPtQTw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SearchTimeLambdaFunction"
         },
-        "CodeSha256": "jqAFw1KD5d12TYwczuX6DZzF8WWJ7zzFiyzWY62ucpg="
+        "CodeSha256": "8+bZ5pJn72yvIDOyRXmCjh5T44tiMzm9k+1JrMPtQTw="
       }
     },
     "ApiGatewayRestApi": {
@@ -256,18 +256,6 @@
           "Ref": "ApiGatewayResourceHello"
         },
         "PathPart": "search",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
-    "ApiGatewayResourceHelloSearchNameVar": {
-      "Type": "AWS::ApiGateway::Resource",
-      "Properties": {
-        "ParentId": {
-          "Ref": "ApiGatewayResourceHelloSearch"
-        },
-        "PathPart": "{name}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -319,7 +307,7 @@
         }
       }
     },
-    "ApiGatewayMethodHelloSearchNameVarOptions": {
+    "ApiGatewayMethodHelloSearchOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -358,7 +346,7 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceHelloSearchNameVar"
+          "Ref": "ApiGatewayResourceHelloSearch"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -403,13 +391,13 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodHelloSearchNameVarGet": {
+    "ApiGatewayMethodHelloSearchGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "GET",
         "RequestParameters": {},
         "ResourceId": {
-          "Ref": "ApiGatewayResourceHelloSearchNameVar"
+          "Ref": "ApiGatewayResourceHelloSearch"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -441,7 +429,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1487051070421": {
+    "ApiGatewayDeployment1487142266439": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -451,7 +439,7 @@
       },
       "DependsOn": [
         "ApiGatewayMethodHelloGet",
-        "ApiGatewayMethodHelloSearchNameVarGet"
+        "ApiGatewayMethodHelloSearchGet"
       ]
     },
     "HelloLambdaPermissionApiGateway": {
@@ -530,13 +518,13 @@
     "HelloLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersionjqAFw1KD5d12TYwczuX6DZzF8WWJ7zzFiyzWY62ucpg"
+        "Ref": "HelloLambdaVersion8bZ5pJn72yvIDOyRXmCjh5T44tiMzm9k1JrMPtQTw"
       }
     },
     "SearchTimeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SearchTimeLambdaVersionjqAFw1KD5d12TYwczuX6DZzF8WWJ7zzFiyzWY62ucpg"
+        "Ref": "SearchTimeLambdaVersion8bZ5pJn72yvIDOyRXmCjh5T44tiMzm9k1JrMPtQTw"
       }
     },
     "ServiceEndpoint": {
