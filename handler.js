@@ -17,7 +17,7 @@ module.exports.hello = (event, context, callback) => {
     },
     body: JSON.stringify({
       message: 'Shuttle Routes have been updated!'
-    }),
+    })
   };
   //reset table before adding
   resetTable();
@@ -26,11 +26,11 @@ module.exports.hello = (event, context, callback) => {
   callback(null, response);
 
 
-};
+}
 
 module.exports.queryShuttleTime = (event, context, callback) => {
     queryBroncoTime(callback);
-};
+}
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 var table = "Bronco_Express_Live_Map";
@@ -112,12 +112,12 @@ function queryBroncoTime(callback) {
                     headers: {
                         "Access-Control-Allow-Origin": "*"
                     },
-                    body: JSON.stringify({'err' : err}),
+                    body: JSON.stringify({'err' : err})
                 };
                 callback(null, responseErr);
             }
         } else {
-            var list = []
+            var list = [];
             data.Items.forEach(function(item) {
                 list.push({id: item.BusID, logo: item.logo, lat: item.lat,
                             lng: item.lng, route: item.route});
@@ -130,7 +130,7 @@ function queryBroncoTime(callback) {
                         "Access-Control-Allow-Origin": "*"
                     },
 
-                    body: JSON.stringify(list),
+                    body: JSON.stringify(list)
                 };
                 callback(null, responseOk);
             }
