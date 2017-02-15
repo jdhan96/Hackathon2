@@ -19,7 +19,9 @@ module.exports.hello = (event, context, callback) => {
       message: 'Shuttle Routes have been updated!'
     }),
   };
+  //reset table before adding
   resetTable();
+  //add elements into table
   fetchBroncoShuttle();
   callback(null, response);
 
@@ -33,9 +35,11 @@ module.exports.queryShuttleTime = (event, context, callback) => {
 var docClient = new AWS.DynamoDB.DocumentClient();
 var table = "Bronco_Express_Live_Map";
 
+
+//resets the table
 function resetTable() {
     var params = {
-        TableName : table,
+        TableName : table
     };
 
     docClient.scan(params, function(err, data) {
@@ -62,6 +66,7 @@ function resetTable() {
     });
 }
 
+//add shuttle to database
 function fetchBroncoShuttle() {
     request('https://rqato4w151.execute-api.us-west-1.amazonaws.com/dev/info', function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -92,6 +97,7 @@ function fetchBroncoShuttle() {
     })
 }
 
+//return json of the most up-to-date shuttle
 function queryBroncoTime(callback) {
     var params = {
         TableName : table
